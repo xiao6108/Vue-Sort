@@ -1,0 +1,19 @@
+#app
+  table.table
+    thead
+      tr
+        th 品名
+        th.click(@click="reverseTrue=!reverseTrue; sortName='price'")
+          | 價格
+          span.icon(:class="{'isReverse': reverseTrue}"
+          v-if="sortName=='price'")
+            i.fas.fa-angle-up.text-success
+        th.click(@click="reverseTrue=!reverseTrue; sortName='expiryDate'")
+          | 到期日
+          span.icon(:class="{'isReverse': reverseTrue}"
+          v-if="sortName=='expiryDate'")
+            i.fas.fa-angle-up.text-success
+      tr(v-for='item in sortData')
+        td {{ item.name }}
+        td {{ item.price }}
+        td {{ item.expiryDate }}

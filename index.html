@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vue-sort</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div id="app">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>品名</th>
+        <th class="click" @click="reverseTrue=!reverseTrue; sortName='price'">價格<span class="icon" :class="{'isReverse': reverseTrue}" v-if="sortName=='price'"><i class="fas fa-angle-up text-success"></i></span></th>
+        <th class="click" @click="reverseTrue=!reverseTrue; sortName='expiryDate'">到期日<span class="icon" :class="{'isReverse': reverseTrue}" v-if="sortName=='expiryDate'"><i class="fas fa-angle-up text-success"></i></span></th>
+      </tr>
+      <tr v-for="item in sortData">
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.expiryDate }}</td>
+      </tr>
+    </thead>
+  </table>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src='https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js'></script>
+<script src='https://use.fontawesome.com/releases/v5.0.8/js/regular.js'></script>
+<script src='https://use.fontawesome.com/releases/v5.0.8/js/solid.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
